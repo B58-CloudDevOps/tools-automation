@@ -8,7 +8,7 @@
 - name: Configuring YUM repo for Hashicorp vault 
   ansible.builtin.shell: yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 
-- name: Installing Nginx 
+- name: Installing Vault 
   ansible.builtin.dnf:
     name: vault
     state: present
