@@ -31,3 +31,9 @@ listener "tcp" {
  tls_disable = 1
 }
 ```
+
+
+
+### Prometheus Philosophy :
+1) They offer metrics that are not really sensitive
+2) That would be the reason why you don't find authentication to prometheus
