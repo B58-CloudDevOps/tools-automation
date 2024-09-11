@@ -14,7 +14,7 @@
     group: "{{app_user}}" 
 
 - name: Copying Systemd file 
-  ansible.builtin.template:
+  ansible.builtin.file:
     src: prometheus.service
     dest: /etc/systemd/system/{{app_user}}.service
 
