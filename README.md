@@ -37,3 +37,8 @@ listener "tcp" {
 ### Prometheus Philosophy :
 1) They offer metrics that are not really sensitive
 2) That would be the reason why you don't find authentication to prometheus
+
+
+
+# Prometheus :
+  1) Service Discover Mechanism, using this we can tell what to monitor and what not to monitor.
