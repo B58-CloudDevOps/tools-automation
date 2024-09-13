@@ -22,5 +22,5 @@ scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: "prometheus"
     static_configs:
-      - targets: ["localhost:9090" , "172.31.43.201:9100"]
+      - targets: ["localhost:9090" , "172.31.92.193:9100" , "172.31.80.236:9100" , "172.31.87.255:9100"]
       
