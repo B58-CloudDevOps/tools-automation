@@ -27,4 +27,8 @@ scrape_configs:
         - name: "tag:Monitor"
           values:
             - "yes"
-            - "true"
+            - "true" 
+    relabel_configs:
+      - source_labels: [__meta_ec2_tag_Name]
+        target_label: instance_name
+
