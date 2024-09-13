@@ -3,7 +3,7 @@
 # sudo yum -y install vault
 
 - name: Configuring Host name 
-  ansible.builtin.shell: set-hostname vault
+  ansible.builtin.shell: set-hostname {{tool_name}}
 
 - name: Configuring YUM repo for Hashicorp vault 
   ansible.builtin.shell: yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
