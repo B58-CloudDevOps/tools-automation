@@ -13,7 +13,7 @@ variable "tools" {
       instance_type = "t3.small"
 
       port_no = {
-        prometheus = 9000
+        prometheus = 9090
       }
     }
 
