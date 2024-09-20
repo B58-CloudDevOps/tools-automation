@@ -4,18 +4,26 @@ variable "tools" {
     vault = {
       name          = "vault"
       instance_type = "t3.small"
-      port_no       = 8200
+      port_no = {
+        vault = 8200
+      }
     }
     prometheus = {
       name          = "prometheus"
       instance_type = "t3.small"
-      port_no       = 9090
+
+      port_no = {
+        prometheus = 9000
+      }
     }
 
     grafana = {
       name          = "grafana"
       instance_type = "t3.small"
-      port_no       = 3000
+
+      port_no = {
+        grafana = 3000
+      }
     }
 
   }
