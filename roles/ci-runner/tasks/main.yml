@@ -17,7 +17,7 @@
     group: "{{defuser}}"
 
 - name: Configuring Runner 
-  ansible.builtin.shell: ./config.sh --url https://github.com/B58-CloudDevOps --token "{{token}}"
+  ansible.builtin.shell: /actions-runner/config.sh --url https://github.com/B58-CloudDevOps --token "{{token}}"
   become_user: "{{defuser}}"
   args: 
    chdir: /actions-runner
