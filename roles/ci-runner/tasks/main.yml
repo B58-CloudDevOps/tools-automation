@@ -4,6 +4,7 @@
 - name: Creating directory
   ansible.builtin.file:
     path: /actions-runner
+    state: directory
     owner: "{{defuser}}"
     group: "{{defuser}}"
 
