@@ -1,6 +1,26 @@
 - name: Configuring Host name 
   ansible.builtin.shell: set-hostname ci-runner
 
+- name: Creating directory
+  ansible.builtin.file:
+    path: /actions-runner
+    owner: "{{defuser}}"
+    group: "{{defuser}}"
+
+- name: Downloading and extracting runner package
+  ansible.builtin.unarchive:
+    src: "{{url}}"
+    dest: /actions-runner
+    remote_src: yes
+    owner: "{{defuser}}"
+    group: "{{defuser}}"
+
+- name: Configuring Runner 
+  ansible.builtin.shell: ./config.sh --url https://github.com/B58-CloudDevOps --token "{{token}}"
+  become_user: "{{defuser}}"
+  args: 
+   chdir: /actions-runner
+
 # - name: Configuring the repo
 #   ansible.builtin.template:
 #     src: elastic.repo
