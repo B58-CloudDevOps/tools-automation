@@ -37,7 +37,7 @@ variable "tools" {
     }
 
     ci-runner = {
-      name          = "ci-server"
+      name          = "ci-runner"
       instance_type = "t3.micro"
 
       port_no = {
