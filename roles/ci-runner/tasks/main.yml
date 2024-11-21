@@ -27,6 +27,9 @@
   args: 
    chdir: /actions-runner 
 
+- name: Strating Runner 
+  ansible.builtin.shell: /actions-runner/svc.sh install ; /actions-runner/svc.sh start
+
 # - name: Configuring the repo
 #   ansible.builtin.template:
 #     src: elastic.repo
