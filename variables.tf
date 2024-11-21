@@ -36,5 +36,15 @@ variable "tools" {
       }
     }
 
+    ci-runner = {
+      name          = "ci-server"
+      instance_type = "t3.micro"
+
+      port_no = {
+        # kibana   = 80
+        # logstash = 5044
+      }
+    }
+
   }
 }
