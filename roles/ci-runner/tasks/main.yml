@@ -1,7 +1,7 @@
 - name: Configuring Host name 
   ansible.builtin.shell: set-hostname ci-runner
 
-- name: Creating directory
+- name: Creates directory
   ansible.builtin.file:
     path: /actions-runner
     state: directory
