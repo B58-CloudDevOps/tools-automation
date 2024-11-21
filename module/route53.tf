@@ -9,10 +9,10 @@ resource "aws_route53_record" "main" {
 
 # Creates public dns record
 
-resource "aws_route53_record" "public" {
-  zone_id = "Z0520454XBSCKDOCPTCY"
-  name    = "${var.name}.cloudapps.today"
-  type    = "A"
-  ttl     = 10
-  records = [aws_instance.main.public_ip]
-}
+# resource "aws_route53_record" "public" {
+#   zone_id = "Z0520454XBSCKDOCPTCY"
+#   name    = "${var.name}.cloudapps.today"
+#   type    = "A"
+#   ttl     = 10
+#   records = [aws_instance.main.public_ip]
+# }
