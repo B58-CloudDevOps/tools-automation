@@ -52,7 +52,6 @@ variable "tools" {
 
       port_no = {
         sonar = 9000
-        ssh   = 22
       }
     }
 
