@@ -22,8 +22,8 @@
     src: "{{url}}"
     dest: /sonar
     remote_src: yes
-    owner: "{{appuser}}"
-    group: "{{appuser}}"
+    owner: "{{sonaruser}}"
+    group: "{{sonaruser}}"
 
 
 
