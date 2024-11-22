@@ -46,5 +46,14 @@ variable "tools" {
       }
     }
 
+    sonarqube = {
+      name          = "sonarqube"
+      instance_type = "r7a.large"
+
+      port_no = {
+        sonarqube = 9000
+      }
+    }
+
   }
 }
