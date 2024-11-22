@@ -28,7 +28,9 @@
    chdir: /actions-runner 
 
 - name: Strating Runner 
-  ansible.builtin.shell: /actions-runner/svc.sh install ; /actions-runner/svc.sh start
+  ansible.builtin.shell: ./svc.sh install ; ./svc.sh start
+  args: 
+   chdir: /actions-runner 
 
 # - name: Configuring the repo
 #   ansible.builtin.template:
