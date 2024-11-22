@@ -5,8 +5,8 @@ After=syslog.target network.target
 [Service]
 Type=forking
 
-ExecStart=/sonar/sonarqube-10.7.0.96327/bin/linux-x86-64 start
-ExecStop=/sonar/sonarqube-10.7.0.96327/bin/linux-x86-64 stop
+ExecStart=/sonar/sonarqube-10.7.0.96327/bin/linux-x86-64/sonar.sh start
+ExecStop=/sonar/sonarqube-10.7.0.96327/bin/linux-x86-64/sonar.sh stop
 
 User=sonar
 Group=sonar
