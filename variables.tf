@@ -46,13 +46,13 @@ variable "tools" {
       }
     }
 
-    sonarqube = {
-      name          = "sonarqube"
+    sonar = {
+      name          = "sonar"
       instance_type = "r7a.large"
 
       port_no = {
-        sonarqube = 9000
-        ssh       = 22
+        sonar = 9000
+        ssh   = 22
       }
     }
 
