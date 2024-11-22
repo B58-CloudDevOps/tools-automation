@@ -1,25 +1,31 @@
 - name: Configuring Host name 
   ansible.builtin.shell: set-hostname sonarqube
 
-# - name: Creates directory
-#   ansible.builtin.file:
-#     path: /actions-runner
-#     state: directory
-#     owner: "{{defuser}}"
-#     group: "{{defuser}}"
+- name: Installing java17
+  ansible.builtin.dnf:
+    name: java-17-openjdk 
+    state: installed
 
-# - name: Downloading and extracting runner package
-#   ansible.builtin.unarchive:
-#     src: "{{url}}"
-#     dest: /actions-runner
-#     remote_src: yes
-#     owner: "{{defuser}}"
-#     group: "{{defuser}}"
+- name: Adding sonar user
+  ansible.builtin.user:
+    name: "{{sonaruser}}"
 
-# - name: Installing pre-req packages
-#   ansible.builtin.dnf:
-#     name: libicu 
-#     state: installed
+- name: Creates soanr directory
+  ansible.builtin.file:
+    path: /sonar
+    state: directory
+    owner: "{{sonaruser}}"
+    group: "{{sonaruser}}"
+
+- name: Downloading and extracting runner package
+  ansible.builtin.unarchive:
+    src: "{{url}}"
+    dest: /sonar
+    remote_src: yes
+    owner: "{{appuser}}"
+    group: "{{appuser}}"
+
+
 
 # - name: Configuring Runner 
 #   ansible.builtin.shell: /actions-runner/config.sh remove --url https://github.com/B58-CloudDevOps --token "{{token}}" --unattended;/actions-runner/config.sh --url https://github.com/B58-CloudDevOps --token "{{token}}" --unattended
