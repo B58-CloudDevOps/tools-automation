@@ -8,9 +8,12 @@ Type=forking
 ExecStart=/sonar/sonarqube-10.7.0.96327/bin/linux-x86-64 start
 ExecStop=/sonar/sonarqube-10.7.0.96327/bin/linux-x86-64 stop
 
-User=vagrant
-Group=vagrant
+User=sonar
+Group=sonar
 Restart=always
+
+LimitNOFILE=65536
+LimitNPROC=8192
 
 [Install]
 WantedBy=multi-user.target
