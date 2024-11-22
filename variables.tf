@@ -52,6 +52,7 @@ variable "tools" {
 
       port_no = {
         sonarqube = 9000
+        ssh       = 22
       }
     }
 
