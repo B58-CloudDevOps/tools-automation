@@ -43,7 +43,7 @@
   register: token 
 
 - name: Removing Runner 
-  ansible.builtin.shell: sudo ./svc.sh stop  ; sudo ./svc.sh unintsall; /actions-runner/config.sh remove --url https://github.com/B58-CloudDevOps --token "{{token.stdout}}" --unattended;
+  ansible.builtin.shell: sudo ./svc.sh stop  ; sudo ./svc.sh unintsall; /actions-runner/config.sh remove --token "{{token.stdout}}" ;
   become_user: "{{defuser}}"
   args: 
    chdir: /actions-runner 
