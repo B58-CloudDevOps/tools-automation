@@ -2,6 +2,6 @@
 
 url: "https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz"
 defuser: "ec2-user"
-token: "AN2LH56GUEH4777DX6L2PSLHH7QJ2"
+token: "AN2LH5Z7KEBK5A2MREFQZTDHIE6CW"
 
 sonarUrl: "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.2.1.4610-linux-x64.zip?"
