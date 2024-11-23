@@ -99,3 +99,24 @@ The generated password for the elastic built-in superuser is : TbQwX+BQ-YPsJ0WyL
 ```
 
 $ dnf install kibana 
+
+
+
+How to register github runner? 
+
+1) Install guthub cli on runner 
+```
+    $ curl https://raw.githubusercontent.com/CodingManoj/rhel9-tools/refs/heads/main/gh-cli.sh |sudo bash 
+```
+
+2) Authenticat to Github
+
+```
+    $ gh auth login 
+```
+
+
+3) Github Cli To generate the token 
+```
+    $ gh api --method POST  -H "Accept: application/vnd.github+json" /repos/b58-clouddevops/expense-backend/actions/runners/registration-token
+```
