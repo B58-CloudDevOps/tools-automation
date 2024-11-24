@@ -45,12 +45,12 @@
   ansible.builtin.debug:
     msg: "{{token.stdout}}"
 
-# - name: Configuring Runner 
-#   ansible.builtin.shell: /actions-runner/config.sh --url https://github.com/B58-CloudDevOps --token "{{token.stdout}}" --unattended --replace;
-#   become_user: "{{defuser}}"
-#   args: 
-#    chdir: /actions-runner 
-#   ignore_errors: yes
+- name: Configuring Runner 
+  ansible.builtin.shell: /actions-runner/config.sh --url https://github.com/B58-CloudDevOps --token "{{token.stdout}}" --unattended --replace;
+  become_user: "{{defuser}}"
+  args: 
+   chdir: /actions-runner 
+  ignore_errors: yes
 
 - name: Installing Runner 
   ansible.builtin.shell: sudo ./svc.sh start
