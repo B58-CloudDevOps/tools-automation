@@ -38,9 +38,8 @@
 
 - name: Fetching Token
   ansible.builtin.shell: | 
-      gh api --method POST  -H "Accept: application/vnd.github+json" /orgs/b58-clouddevops/actions/runners/registration-token |jq .token |xargs
+      gh api --method POST  -H "Accept: application/vnd.github+json" /orgs/B58-CloudDevOps/actions/runners/registration-token |jq .token |xargs
   register: token 
-  become_user: ec2-user
 
 - name: Printing token 
   ansible.builtin.debug:
