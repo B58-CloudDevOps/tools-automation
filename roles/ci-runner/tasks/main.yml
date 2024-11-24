@@ -21,7 +21,6 @@
     name: libicu 
     state: installed
 
-
 - name: Creates directory for sonar-scanner
   ansible.builtin.file:
     path: /sonar-scanner
@@ -42,15 +41,15 @@
       gh api --method POST  -H "Accept: application/vnd.github+json" /repos/b58-clouddevops/expense-backend/actions/runners/registration-token |jq .token |xargs
   register: token 
 
-- name: Removing Runner 
-  ansible.builtin.shell: sudo ./svc.sh stop  ; sudo ./svc.sh unintsall; /actions-runner/config.sh remove --token "{{token.stdout}}" ;
-  become_user: "{{defuser}}"
-  args: 
-   chdir: /actions-runner 
-  ignore_errors: yes
+# - name: Removing Runner 
+#   ansible.builtin.shell: sudo ./svc.sh stop  ; sudo ./svc.sh unintsall; /actions-runner/config.sh remove --token "{{token.stdout}}" ;
+#   become_user: "{{defuser}}"
+#   args: 
+#    chdir: /actions-runner 
+#   ignore_errors: yes
 
 - name: Configuring Runner 
-  ansible.builtin.shell: /actions-runner/config.sh remove --token "{{token.stdout}}" ; /actions-runner/config.sh --url https://github.com/B58-CloudDevOps --token "{{token.stdout}}" --unattended --replace
+  ansible.builtin.shell: /actions-runner/config.sh --url https://github.com/B58-CloudDevOps --token "{{token.stdout}}" --unattended --replace;
   become_user: "{{defuser}}"
   args: 
    chdir: /actions-runner 
@@ -59,10 +58,7 @@
 - name: Strating Runner 
   ansible.builtin.shell: sudo ./svc.sh install ; sudo ./svc.sh start
   args: 
-   chdir: /actions-runner 
-
-
-
+   chdir: /actions-runner
 
 
 # - name: Configuring the repo
