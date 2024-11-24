@@ -21,20 +21,20 @@
     name: libicu 
     state: installed
 
-- name: Creates directory for sonar-scanner
-  ansible.builtin.file:
-    path: /sonar-scanner
-    state: directory
-    owner: "{{defuser}}"
-    group: "{{defuser}}"
+# - name: Creates directory for sonar-scanner
+#   ansible.builtin.file:
+#     path: /sonar-scanner
+#     state: directory
+#     owner: "{{defuser}}"
+#     group: "{{defuser}}"
 
-- name: Downloading and extracting sonar
-  ansible.builtin.unarchive:
-    src: "{{sonarUrl}}"
-    dest: /sonar-scanner
-    remote_src: yes
-    owner: "{{defuser}}"
-    group: "{{defuser}}"
+# - name: Downloading and extracting sonar
+#   ansible.builtin.unarchive:
+#     src: "{{sonarUrl}}"
+#     dest: /sonar-scanner
+#     remote_src: yes
+#     owner: "{{defuser}}"
+#     group: "{{defuser}}"
 
 - name: Fetching Token
   ansible.builtin.shell: | 
