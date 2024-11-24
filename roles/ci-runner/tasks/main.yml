@@ -52,11 +52,15 @@
 #    chdir: /actions-runner 
 #   ignore_errors: yes
 
-- name: Strating Runner 
-  ansible.builtin.shell: sudo ./svc.sh install ; sudo ./svc.sh start
+- name: Installing Runner 
+  ansible.builtin.shell: sudo ./svc.sh start
   args: 
    chdir: /actions-runner
 
+- name: Enrolling Runner 
+  ansible.builtin.shell: sudo ./svc.sh start
+  args: 
+   chdir: /actions-runner
 
 # - name: Configuring the repo
 #   ansible.builtin.template:
