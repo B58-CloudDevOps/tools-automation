@@ -41,6 +41,13 @@
       gh api --method POST  -H "Accept: application/vnd.github+json" /orgs/B58-CloudDevOps/actions/runners/registration-token |jq .token |xargs
   register: token 
 
+- name: Uninstalling Runner 
+  ansible.builtin.shell: sudo ./svc.sh stop; sudo ./svc.sh uninstall ; /actions-runner/config.sh remove --token "{{token.stdout}}"
+  become_user: "{{defuser}}"
+  args: 
+   chdir: /actions-runner 
+  ignore_errors: yes
+
 - name: Configuring Runner 
   ansible.builtin.shell: /actions-runner/config.sh --url https://github.com/B58-CloudDevOps --token "{{token.stdout}}" --unattended --replace;
   become_user: "{{defuser}}"
