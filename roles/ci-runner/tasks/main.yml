@@ -21,6 +21,11 @@
     name: libicu 
     state: installed
 
+- name: Installing java17
+  ansible.builtin.dnf:
+    name: java-17-openjdk 
+    state: installed
+
 - name: Fetching Token
   ansible.builtin.shell: | 
       gh api --method POST  -H "Accept: application/vnd.github+json" /orgs/B58-CloudDevOps/actions/runners/registration-token |jq .token |xargs
