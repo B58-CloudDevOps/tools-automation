@@ -26,6 +26,11 @@
     name: java-17-openjdk 
     state: installed
 
+- name: Installing docker
+  ansible.builtin.dnf:
+    name: docker
+    state: installed
+
 - name: Fetching Token
   ansible.builtin.shell: | 
       gh api --method POST  -H "Accept: application/vnd.github+json" /orgs/B58-CloudDevOps/actions/runners/registration-token |jq .token |xargs
