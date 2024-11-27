@@ -81,10 +81,16 @@
     src: kubernetes.repo
     dest: /etc/yum.repos.d/kubernetes.repo
 
-- name: Installing ELK Stack
+- name: Installing Kubectl
   ansible.builtin.dnf:
     name: kubectl
     state: installed
+
+- name: Installing ArgoCD CLI 
+  ansible.builtin.shell: |
+      curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+      sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+      rm argocd-linux-amd64
 
 # - name: Configuring the repo
 #   ansible.builtin.template:
