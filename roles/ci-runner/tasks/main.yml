@@ -76,6 +76,16 @@
     owner: "{{defuser}}"
     group: "{{defuser}}"
 
+- name: Copying the kubectl repo
+  ansible.builtin.template:
+    src: kubernetes.repo
+    dest: /etc/yum.repos.d/kubernetes.repo
+
+- name: Installing ELK Stack
+  ansible.builtin.dnf:
+    name: kubectl
+    state: installed
+
 # - name: Configuring the repo
 #   ansible.builtin.template:
 #     src: elastic.repo
