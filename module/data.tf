@@ -1,5 +1,5 @@
 data "aws_route53_zone" "main" {
-  name         = "expense.internal"
+  name         = "roboshop.internal"
   private_zone = true
 }
 
